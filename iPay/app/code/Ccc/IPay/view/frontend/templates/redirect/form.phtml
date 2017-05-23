@@ -1,0 +1,28 @@
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+
+
+/**
+ * @var \Magento\Paypal\Block\Payflow\Link\Iframe $block
+ * @see \Magento\Paypal\Block\Payflow\Link\Iframe
+ */
+?>
+<html>
+<head>
+</head>
+<body>
+<?php echo __("You will be redirected to iPay Payments website in a few seconds ...");?>
+<form id="ipay_form" name="ipay_form" method="POST" action="<?php echo $block->escapeUrl($block->getTransactionUrl()); ?>">
+	<?php foreach ($block->requestFields() as $fieldName => $fieldValue): ?>
+		<input type="hidden" name="<?php echo $block->escapeHtml($fieldName); ?>" value="<?php echo $fieldValue; ?>"/>	
+	<?php endforeach;?>
+</form>
+<script>
+    document.getElementById('ipay_form').submit();
+</script>
+</body>
+</html>
