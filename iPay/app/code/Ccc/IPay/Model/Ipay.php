@@ -95,7 +95,7 @@ class Ipay extends \Magento\Payment\Model\Method\AbstractMethod
 			'success_url'			=> $this->getCallbackUrl(),
 			'cancelled_url'			=> $this->getCallbackUrl(),
 			'deferred_url'			=> $this->getCallbackUrl(),
-			'extra_src_currency'	=> $order->getBaseCurrencyCode(),
+			'currency'			=> $order->getBaseCurrencyCode(),
 			'invoice_id'			=> $orderId,
 			'total'					=> $orderAmount,
 			'description'			=> 'Payment for Order #'.$orderId,
